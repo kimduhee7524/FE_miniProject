@@ -1,0 +1,131 @@
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #edc7c7;
+}
+
+main {
+  position: relative;
+  width: 65rem;
+  height: 40rem;
+  background-color: #edc7c7;
+  filter: blur();
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+}
+
+.game-container {
+  gap: 6rem;
+  background-color: #AD3047;
+  padding: 6rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.player {
+  background-color: #AD3047;
+  flex: 50%;
+  padding: 5rem 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.75s;
+}
+.player--1{
+  border-width: 2px 1px 2px 2px;
+  border-style: solid;
+  border-color: black;
+}
+.player--2{
+  border-width: 2px 2px 2px 0px;
+  border-style: solid;
+  border-color: black;
+}
+.player1,
+.player2 {
+  text-align: center;
+  font-size: 2rem;
+  color: black;
+}
+.current-label {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+.current-score {
+  font-size: 2rem;
+  color: bisque;
+  text-align: center;
+}
+.score{
+  font-size: 4rem;
+  font-weight: 300;
+  margin-top: auto;
+  margin-bottom: 100px;
+  color: bisque;
+  text-align: center;
+}
+
+.btn--new{
+  top: 6rem;
+}
+.btn--roll{
+  top: 25rem;
+}
+.btn--hold{
+  top: 30rem;
+}
+.btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1.2rem 2rem;
+  border: none;
+  cursor: pointer;
+  color: #444;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  transition: all 0.2s;
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+button {
+  appearance: auto;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: center;
+  align-items: flex-start;
+  cursor: default;
+  box-sizing: border-box;
+  margin: 0em;
+  padding-block: 1px;
+  padding-inline: 6px;
+  border-width: 2px;
+  border-style: outset;
+  border-color: buttonborder;
+  border-image: initial;
+}
+button:hover {
+  background-color: #D8B3C3;
+}
+  
+  
