@@ -1,3 +1,5 @@
+const score1 = document.querySelector('.player--1 .score');
+const score2 = document.querySelector('.player--2 .score');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 const btnNew = document.querySelector('.btn--new');
@@ -8,10 +10,15 @@ let curPlayerScore = 0;
 let curPlayerScoreElement;
 let curPlayerElement;
 
-var playInit = function(){
+var playerInit = function(){
     curPlayerScoreElement.textContent =0;
     curPlayerScore=0;
     curPlayerElement.style.backgroundColor ="#AD3047";
+}
+var ChangePlayer = function(){
+    curPlayer = (curPlayer === 1) ? 2 : 1;
+    curPlayerElement =document.querySelector(`.player--${curPlayer}`)
+    curPlayerElement.style.backgroundColor = "green";
 }
 
 const rollDice =() => {
@@ -23,11 +30,8 @@ const rollDice =() => {
     dcieNum.textContent = diceValue;
 
     if(diceValue === 1 || diceValue === 2){
-        playInit();
-        curPlayer = (curPlayer === 1) ? 2 : 1;
-        curPlayerElement =document.querySelector(`.player--${curPlayer}`)
-        curPlayerElement.style.backgroundColor = "green";
-        console.log("확인");
+        playerInit();
+        ChangePlayer();
     }
     else{
         curPlayerScore += diceValue;
@@ -45,17 +49,27 @@ const holdDice =() => {
         dcieNum.textContent = `player ${curPlayer} 숭리`
     }
     else{
-        playInit();
-        curPlayer = (curPlayer === 1) ? 2 : 1;
-        curPlayerElement =document.querySelector(`.player--${curPlayer}`)
-        curPlayerElement.style.backgroundColor = "green";
+        // playInit();
+        score = document.querySelector(`.player--${curPlayer} .score`);
+        score.textContent = Number(score.textContent) + curPlayerScore;
+        playerInit();
+        ChangePlayer();
     }
 }
 
 const newStart =()=>{
     curPlayer  = 1;
-    playInit();
-    curPlayerElement.style.backgroundColor = "green";
+    score1.textContent=0;
+    score2.textContent=0;
+    const curPlayer1=document.querySelector(`.player--1 .current-score`)
+    const curPlayer2=document.querySelector(`.player--2 .current-score`)
+    curPlayer1.textContent=0;
+    curPlayer2.textContent=0;
+    const player1 =document.querySelector(`.player--1`)
+    const player2 =document.querySelector(`.player--2`)
+    player1.style.backgroundColor = "green";
+    player2.style.backgroundColor ="#AD3047";
+    dcieNum.textContent="?";
 }
 
 
